@@ -155,8 +155,8 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
-        // path.resolve(__dirname, "src/assets/less/variables.less"),
-        // path.resolve(__dirname, "src/assets/less/mixins.less"),
+        path.resolve(__dirname, './src/style/variables.less'),
+        path.resolve(__dirname, './src/style/flex.less'),
       ], // 引入全局样式变量
     },
   },
