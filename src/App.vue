@@ -2,6 +2,7 @@
   <div id="app">
     <div>nav</div>
     <div id="theCount">{{ theCount }}</div>
+    <input type="file" @change="loggg" />
     <div>foot</div>
   </div>
 </template>
@@ -28,6 +29,11 @@ export default {
         easing: 'cubicBezier(0.000, 1.010, 1.000, -0.600)',
       })
     })
+  },
+  methods: {
+    loggg(e) {
+      console.log(e)
+    },
   },
 }
 </script>
