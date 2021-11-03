@@ -9,6 +9,8 @@
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
+  <!-- 图标文件 -->
+  <script type="text/javascript" src="//at.alicdn.com/t/font_2912352_c2nr35jilmp.js"></script>
   <!-- 使用CDN的CSS文件 -->
   <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
     <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet" />

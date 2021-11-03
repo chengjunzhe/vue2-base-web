@@ -29,10 +29,10 @@ export default {
   },
   computed: {
     iconName() {
-      return `#icon-${this.svgName}`
+      return `#${this.svgName}`
     },
     svgClass() {
-      return 'svg-icon-' + this.svgName
+      return 'svg-' + this.svgName
     },
     // 默认样式
     svgicon() {
