@@ -22,3 +22,6 @@ Vue.use(Components)
 // Object.keys(filters).forEach((key) => {
 //   Vue.filter(key, filters[key])
 // })
+
+// 自己写的全局方法
+import './myFunction'

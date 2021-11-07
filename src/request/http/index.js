@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { apiBasePath, baseApi } from '@/config'
 import Qs from 'qs'
-import Cookies from 'js-cookie'
 const IS_PROD = ['production'].includes(process.env.NODE_ENV)
 
 const $axios = axios.create({
@@ -14,13 +13,10 @@ const $axios = axios.create({
 // 请求拦截器
 $axios.interceptors.request.use(
   (config) => {
-    const token = Cookies.get('token')
-    if (token) {
-      config.headers.token = token // 请求头部添加token
-    }
     return config
   },
   (error) => {
+    console.log(error)
     return Promise.reject(error)
   }
 )
@@ -28,27 +24,31 @@ $axios.interceptors.request.use(
 // 响应拦截器
 $axios.interceptors.response.use(
   (response) => {
-    // 如果返回状态码显示正确，则resolve，反之reject
-    return Promise.resolve(response.data)
+    const { code, msg, data } = response.data
+    if (code !== 200) {
+      alert(msg)
+      return Promise.reject(msg)
+    }
+    return { data, msg }
   },
   (error) => {
     if (error.response) {
       switch (error.response.status) {
         case 404:
-          console.log('网络请求不存在')
+          alert('网络请求不存在')
           break
         case 503:
-          console.log('服务器不可用')
+          alert('服务器不可用')
           break
         default:
-          console.log(error.response.data.message)
+          alert(error.response.data.message)
       }
     } else {
       // 请求超时或者网络有问题
       if (error.message.includes('timeout')) {
-        console.log('网络请求超时')
+        alert('网络请求超时')
       } else {
-        console.log('请求失败')
+        alert('请求失败')
       }
     }
     return Promise.reject(error)

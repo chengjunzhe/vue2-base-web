@@ -26,6 +26,10 @@ export default {
       type: String,
       default: 'currentColor',
     },
+    isFullScreen: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     iconName() {
@@ -43,7 +47,14 @@ export default {
         fill: `${this.fillColor}`,
         overflow: 'hidden',
       }
-      return style
+      const fullStyle = {
+        width: `100%`,
+        height: `100%`,
+        'vertical-align': ' middle',
+        fill: `${this.fillColor}`,
+        overflow: 'hidden',
+      }
+      return this.isFullScreen ? fullStyle : style
     },
   },
 }
