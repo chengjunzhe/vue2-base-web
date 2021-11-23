@@ -1,6 +1,13 @@
 # vue2-base-web
 
+## 项目介绍
+
+```
+基于vue2的web起步项目
+```
+
 ## 目录结构
+
 ```
 ├── babel.config.js  // babel的配置文件
 ├── .prettierrc.js  // 代码格式化
@@ -13,12 +20,13 @@
 │   |   ├── http // axios请求配置
 │   ├── assets  // 存放一些静态文件
 │   ├── components // 组件都放在这个文件夹里
+│   |   ├── svgIcon // svg组件
 │   ├── config  // 环境配置
 │   ├── filters  // 自定义过滤器
 │   ├── directives  // 自定义指令
 │   ├── main.js     // 入口文件
 │   ├── router     // vuerouter
-│   ├── store      // vuex 
+│   ├── store      // vuex
 │   ├── style      // 样式
 │   ├── utils      // 存放一些插件和工具类函数
 │   ├── vueSetting      // 和vue项目有关的配置
@@ -26,6 +34,7 @@
 ```
 
 ## 配备功能
+
 ```
 * axios请求配置:引入、拦截器、封装常用请求方法等——详情见request/http/index.js
 * dayjs时间库：引入、配置中文——详情见vueSetting/index.js
@@ -36,6 +45,5 @@
 * eslint/prettier控制代码标准：prettier/eslint插件——详情见.prettierrc.js/eslintrc.js
 * 使用less预处理器：less/less-loader插件
 * 使用less全局变量：style-resources-loader插件——详情见vue.config.js
-* 使用svg：svg-sprite-loader插件——详情见vue.config.js
 * 使用svg：svg-sprite-loader插件——详情见vue.config.js
 ```
