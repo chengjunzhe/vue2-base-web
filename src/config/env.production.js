@@ -1,5 +1,5 @@
 module.exports = {
   title: '生产',
-  baseApi: 'http://yctest.xktwx.net', // api请求地址
-  apiBasePath: '/apis/', //固定路径
+  baseApi: 'http://101.200.76.112', // api请求地址
+  apiBasePath: '', //固定路径
 }
