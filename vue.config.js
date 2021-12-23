@@ -50,11 +50,11 @@ module.exports = {
     },
     proxy: {
       //配置跨域
-      [defaultSettings.apiBasePath]: {
-        target: defaultSettings.baseApi, // 接口的域名
-        // ws: true, // 是否启用websockets
+      '/apis': {
+        target: 'http://101.200.76.112', // 接口的域名
+        ws: true, // 是否启用websockets
         changOrigin: true, // 开启代理，在本地创建一个虚拟服务端
-        // pathRewrite: {} //重写路径
+        pathRewrite: { '^/apis': '' }, //重写路径
       },
     },
   },

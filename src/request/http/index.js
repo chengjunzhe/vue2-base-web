@@ -1,13 +1,12 @@
 import axios from 'axios'
-import { apiBasePath, baseApi } from '@/config'
+import { baseApi } from '@/config'
 import Qs from 'qs'
-const IS_PROD = ['production'].includes(process.env.NODE_ENV)
 
 const $axios = axios.create({
   // 设置超时时间
   timeout: 30000,
   // 基础url，会在请求url中自动添加前置链接
-  baseURL: IS_PROD ? baseApi : apiBasePath,
+  baseURL: baseApi,
 })
 
 // 请求拦截器
