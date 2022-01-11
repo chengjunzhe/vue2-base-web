@@ -1,5 +1,7 @@
 <template>
-  <div id="app"><h1>你好啊xd</h1></div>
+  <div id="app">
+    <h1>你好啊xd</h1>
+  </div>
 </template>
 
 <style lang="less">
