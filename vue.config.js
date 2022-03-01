@@ -156,7 +156,7 @@ module.exports = {
       preProcessor: 'less',
       patterns: [
         path.resolve(__dirname, './src/style/variables.less'),
-        path.resolve(__dirname, './src/style/flex.less'),
+        path.resolve(__dirname, './src/style/cjz-used-style.less'),
       ], // 引入全局样式变量
     },
   },

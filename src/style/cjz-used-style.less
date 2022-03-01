@@ -1,33 +1,83 @@
+// 基础变量
+
+/*
+ * 01 标准色
+ * 规则：@{深浅}_{颜色}_{分类}_{序号} 变量统一采用下划线命名规范
+ * 分类：可为空
+ *   main：主色
+ *   font：字体色
+ *   line：线色
+ *   gradient: 渐变 (gradient1、gradient2)
+ *   second：辅色
+ *   third：次级辅色
+ * 颜色：不为空，常用颜色英文
+ * 深浅：可为空 或者 不透明的
+ *   darker：较深
+ *   dark：深
+ *   light：浅
+ *   lighter：较浅
+ */
+
+// 数
+@ratio: 1; //缩放倍数
+
+// 字
+@white_font_color:#fff;//白
+
+// 空
+@space_base: 4px * @ratio;
+@space_margin_16: @space_base*4;
+
+// CSS Module 有个:export关键词，等同于es6的export，导出一个js对象
+:export {
+    name: "less";
+
+    // 数
+    ratio: @ratio;
+    
+    // 色
+    white_font_color: @white_font_color;
+
+    // 空
+    space_base: @space_base;
+    space_margin_16: @space_margin_16;
+}
+
+// 基础变量
+
+
+// flex-----------------------------
+
 // 水平排列
 
 // flex容器——元素两端排列
-.flexBetween{
+.flex-between{
     display: flex;
     justify-content: space-between;
     align-items:center 
 }
 
 // flex容器——元素居中排列
-.flexAround{
+.flex-around{
     display: flex;
     justify-content: space-around;
     align-items:center  
 }
 
 // flex容器——元素靠左排列
-.flexLeft{
+.flex-left{
     display: flex;
     justify-content: flex-start;
     align-items:center  
 }
 // flex容器——元素靠👉排列
-.flexRight{
+.flex-right{
     display: flex;
     justify-content: flex-end;
     align-items:center  
 }
 // flex  水平居中 垂直居中
-.flexCenter {
+.flex-center {
     display: flex;
     justify-content: center;
     align-items:center 
@@ -40,7 +90,7 @@
 // 垂直排列
 
 //flex 垂直排列居中对齐
-.flexColumnCenter {
+.flex-column-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +98,7 @@
 }
 
 //flex 垂直排列靠左对齐
-.flexColumnLeft {
+.flex-column-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,29 +106,35 @@
 }
 
 //flex 垂直排列两端对齐
-.flexColumnBetween{
+.flex-column-between{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items:flex-start;
 }
 
-// 垂直排列
-
-// flex容器子元素——平均排列
-.flexSonAlignCenter{
-    flex:1 1 auto
+//flex 垂直排列分散对齐
+.flex-column-around{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
 }
 
+// 垂直排列
+
+
+// 单行/多行省略号-----------------------------
+
 //单行文本溢出隐藏 。。。
-.texthidden{
+.text-hidden{
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 }
 
 //多行文本溢出隐藏 。。。
-.twoLine {
+.two-line {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */

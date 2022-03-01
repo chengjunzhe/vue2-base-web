@@ -1,0 +1,5 @@
+public/*.js
+src/assets
+src/data
+src/utils
+node_modules/
