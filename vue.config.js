@@ -147,6 +147,7 @@ module.exports = {
   css: {
     extract: IS_PROD,
     sourceMap: false,
+    requireModuleExtension: false,
     loaderOptions: {
       less: {},
     },
