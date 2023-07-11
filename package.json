@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve --mode development",
-    "build": "vue-cli-service build --mode production",
-    "lint": "vue-cli-service lint --mode development"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider & vue-cli-service serve --mode development",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & vue-cli-service build --mode production",
+    "lint": "vue-cli-service lint --mode development --fix",
+    "serve": "serve ./dist"
   },
   "dependencies": {
     "axios": "^0.24.0",

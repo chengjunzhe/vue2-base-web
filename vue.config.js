@@ -1,3 +1,4 @@
+// @ts-nocheck
 const path = require('path')
 const resolve = (dir) => path.join(__dirname, dir)
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
